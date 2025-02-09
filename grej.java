@@ -22,20 +22,17 @@ class LitetSpel {
         
         frame.add(buttonPanel, BorderLayout.SOUTH);
 
-        // Skapa ett JLayeredPane för att hantera överlappande komponenter
         JLayeredPane layeredPane = new JLayeredPane();
         layeredPane.setPreferredSize(new Dimension(400, 350));
         
-        // Ladda och skala den första bilden från resurserna
-        ImageIcon firstImageIcon = new ImageIcon(getClass().getResource("/cat.png"));
+        ImageIcon firstImageIcon = new ImageIcon(LitetSpel.class.getResource("/cat.png"));
         Image firstImage = firstImageIcon.getImage().getScaledInstance(400, 300, Image.SCALE_SMOOTH);
         ImageIcon scaledFirstImageIcon = new ImageIcon(firstImage);
         JLabel firstImageLabel = new JLabel(scaledFirstImageIcon);
         firstImageLabel.setBounds(0, 0, 400, 300);
         layeredPane.add(firstImageLabel, JLayeredPane.DEFAULT_LAYER);
         
-        // Ladda och skala den andra bilden från resurserna
-        ImageIcon secondImageIcon = new ImageIcon(getClass().getResource("/happycat.png"));
+        ImageIcon secondImageIcon = new ImageIcon(LitetSpel.class.getResource("/happycat.png"));
         Image secondImage = secondImageIcon.getImage().getScaledInstance(400, 300, Image.SCALE_SMOOTH);
         ImageIcon scaledSecondImageIcon = new ImageIcon(secondImage);
         JLabel secondImageLabel = new JLabel(scaledSecondImageIcon);
@@ -45,20 +42,18 @@ class LitetSpel {
         
         frame.add(layeredPane, BorderLayout.CENTER);
 
-        // Lägg till action listener till knappen
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 firstImageLabel.setVisible(false);
                 secondImageLabel.setVisible(true);
-                // Skapa en timer för att dölja den andra bilden efter 1 sekund
                 new Timer().schedule(new TimerTask() {
                     @Override
                     public void run() {
                         secondImageLabel.setVisible(false);
                         firstImageLabel.setVisible(true);
                     }
-                }, 1000); // 1000 millisekunder = 1 sekund
+                }, 200);
             }
         });
 
