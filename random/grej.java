@@ -26,14 +26,14 @@ class LitetSpel {
         JLayeredPane layeredPane = new JLayeredPane();
         layeredPane.setPreferredSize(new Dimension(400, 350));
         
-        ImageIcon firstImageIcon = new ImageIcon(LitetSpel.class.getResource("/cat.png"));
+        ImageIcon firstImageIcon = new ImageIcon(LitetSpel.class.getResource("/random/cat.png"));
         Image firstImage = firstImageIcon.getImage().getScaledInstance(400, 300, Image.SCALE_SMOOTH);
         ImageIcon scaledFirstImageIcon = new ImageIcon(firstImage);
         JLabel firstImageLabel = new JLabel(scaledFirstImageIcon);
         firstImageLabel.setBounds(0, 0, 400, 300);
         layeredPane.add(firstImageLabel, JLayeredPane.DEFAULT_LAYER);
         
-        ImageIcon secondImageIcon = new ImageIcon(LitetSpel.class.getResource("/happycat.png"));
+        ImageIcon secondImageIcon = new ImageIcon(LitetSpel.class.getResource("/random/happycat.png"));
         Image secondImage = secondImageIcon.getImage().getScaledInstance(400, 300, Image.SCALE_SMOOTH);
         ImageIcon scaledSecondImageIcon = new ImageIcon(secondImage);
         JLabel secondImageLabel = new JLabel(scaledSecondImageIcon);
