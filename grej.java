@@ -26,16 +26,16 @@ class LitetSpel {
         JLayeredPane layeredPane = new JLayeredPane();
         layeredPane.setPreferredSize(new Dimension(400, 350));
         
-        // Ladda och skala den första bilden
-        ImageIcon firstImageIcon = new ImageIcon("C:\\Users\\almav\\OneDrive\\Bilder\\Skärmbilder\\cat.png");
+        // Ladda och skala den första bilden från resurserna
+        ImageIcon firstImageIcon = new ImageIcon(getClass().getResource("/cat.png"));
         Image firstImage = firstImageIcon.getImage().getScaledInstance(400, 300, Image.SCALE_SMOOTH);
         ImageIcon scaledFirstImageIcon = new ImageIcon(firstImage);
         JLabel firstImageLabel = new JLabel(scaledFirstImageIcon);
         firstImageLabel.setBounds(0, 0, 400, 300);
         layeredPane.add(firstImageLabel, JLayeredPane.DEFAULT_LAYER);
         
-        // Ladda och skala den andra bilden
-        ImageIcon secondImageIcon = new ImageIcon("C:\\Users\\almav\\OneDrive\\Skrivbord\\Programmering\\happycat.png");
+        // Ladda och skala den andra bilden från resurserna
+        ImageIcon secondImageIcon = new ImageIcon(getClass().getResource("/happycat.png"));
         Image secondImage = secondImageIcon.getImage().getScaledInstance(400, 300, Image.SCALE_SMOOTH);
         ImageIcon scaledSecondImageIcon = new ImageIcon(secondImage);
         JLabel secondImageLabel = new JLabel(scaledSecondImageIcon);
@@ -58,7 +58,7 @@ class LitetSpel {
                         secondImageLabel.setVisible(false);
                         firstImageLabel.setVisible(true);
                     }
-                }, 200); // 1000 millisekunder = 1 sekund
+                }, 1000); // 1000 millisekunder = 1 sekund
             }
         });
 
